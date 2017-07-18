@@ -1,1 +1,19 @@
 <h1> Teams </h1>
+
+<ul> <% @teams.each do |team|%>
+
+
+<div class="teamindex">
+	<h2> <%= team.team_name %></h2>
+	<ul>
+		<li><%= team.player_names %></li>
+	</ul>
+
+	<p>Wins:<%= team.wins %></p>
+	<p>Losses:<%= team.losses %></p>
+
+
+	</div>
+
+<% end %>
+
