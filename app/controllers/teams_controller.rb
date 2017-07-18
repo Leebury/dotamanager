@@ -9,9 +9,13 @@ class TeamsController < ApplicationController
 	end
 
 	def edit
+		@team = Team.find(params[:id])
 	end
 
 	def update
+		@team = Team.find(params[:id])
+		@team.save
+		redirect_to @team
 	end
 
 	def new
@@ -21,11 +25,15 @@ class TeamsController < ApplicationController
 	def create
 		puts params
 		@team = Team.new(team_params)
+		@team.user_id = current_user.id
 		@team.save
 		redirect_to @team
 	end
 
 	def destroy
+		@team = Team.find(params[:id])
+		team.destroy
+		redirect_to teams_path
 	end
 
 

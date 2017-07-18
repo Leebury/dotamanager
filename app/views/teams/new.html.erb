@@ -12,17 +12,17 @@
 
 	<div class="field">
 		<%= form.label :total_wins%>
-		<%= form.text_field :total_wins, id: :wins %>
+		<%= form.number_field :wins, id: :wins %>
 	</div>
 
 	<div class="field">
 		<%= form.label :total_losses%>
-		<%= form.text_field :total_losses, id: :losses %>
+		<%= form.number_field :losses, id: :losses %>
 	</div>
 
 	<div class="field">
 		<%= form.submit %>
 	</div>
-	
+
 <% end %>
 
