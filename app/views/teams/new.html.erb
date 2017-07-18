@@ -1,0 +1,23 @@
+<h1> New team </h1>
+
+<%= form_with(model: @team) do |form| %>
+	<div class="field">
+		<%= form.label :team_name%>
+		<%= form.text_field :team_name, id: :team_name %>
+	</div>
+	<div class="field">
+		<%= form.label :player_names %>
+		<%= form.text_field :player_names, id: :player_names %>
+	<div class="field">
+		<%= form.label :total_wins%>
+		<%= form.text_field :total_wins, id: :wins %>
+	</div>
+	<div class="field">
+		<%= form.label :total_losses%>
+		<%= form.text_field :total_losses, id: :losses %>
+	</div>
+	<div class="field">
+		<%= form.submit %>
+	</div>
+<% end %>
+
