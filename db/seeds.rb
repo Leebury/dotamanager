@@ -23,10 +23,16 @@ team1 = Team.create!({
     losses: 50
 })
 
-player1 = Player.create!({
+team2 = Team.create!({
+	team_name: "Nialls Beasts",
+    player_names: "Lee, Steph, Omar, Fane, Anna, Joe, Jenny",
+    user_id: user1.id,
+    wins: 700,
+    losses: 40
+})
 
+player1 = Player.create!({
 	player_name: "Lee",
-	team_id: team1.id,
 	preferred_role: "Support",
 	most_played_heroes: "Earthshaker, Rubick, Crystal Maiden",
 	average_gpm: 467,
@@ -35,7 +41,6 @@ player1 = Player.create!({
 
 player2 = Player.create!({
 	player_name: "Max",
-	team_id: team1.id,
 	preferred_role: "Carry",
 	most_played_heroes: "Anti-mage, Faceless void, Meepo",
 	average_gpm: 867,
@@ -45,13 +50,26 @@ player2 = Player.create!({
 
 player3 = Player.create!({
 	player_name: "Jon",
-	team_id: team1.id,
 	preferred_role: "Ganker",
 	most_played_heroes: "Bounty hunter, Io, Spirit breaker",
 	average_gpm: 532,
 	average_exp: 522
 })
 
+PlayerTeam.create({
+	player_id: player1.id,
+	team_id: team1.id
+})
+
+PlayerTeam.create({
+	player_id: player2.id,
+	team_id: team2.id
+})
+
+PlayerTeam.create({
+	player_id: player3.id,
+	team_id: team2.id
+})
 
 
 

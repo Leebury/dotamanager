@@ -13,9 +13,17 @@ class PlayersController < ApplicationController
 	end
 
 	def update
-		@player = Player.find(params[:id])
-		@player.team_id = params[:team_name][:team_id]
-		@player.update(player_params)
+		# @player = Player.find(params[:id])
+		# @player.team_id = params[:team_name][:team_id]
+		# @player.update(player_params)
+		# redirect_to @player
+
+		if params[:team_name][:team_id] != nil 
+			@player = Team.find(params[:team_name][:team_id]).players.create!(player_params)
+		else
+			@player = Player.create!(player_params)
+		end
+
 		redirect_to @player
 	end
 
@@ -24,10 +32,15 @@ class PlayersController < ApplicationController
 	end
 
 	def create
-		@player = Player.create(player_params)
-		@player.team_id = params[:team_name][:team_id]
-		@player.save
+		
+		if params[:team_name][:team_id] != "" 
+			@player = Team.find(params[:team_name][:team_id]).players.create!(player_params)
+		else
+			@player = Player.create!(player_params)
+		end
+
 		redirect_to @player
+
 	end
 
 	def destroy
