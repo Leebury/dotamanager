@@ -1,7 +1,7 @@
 <h1> New player </h1>
 
 
-<%= form_with(model: @team) do |form| %>
+<%= form_with(model: @player) do |form| %>
 	<div class="playerField">
 		<%= form.label :player_name %>
 		<%= form.text_field :player_name, id: :player_name %>
@@ -30,7 +30,7 @@
 	<div class="playerField">
 
 
-		<%= select("team_name", "team_id", Team.all.collect {|t| [ t.team_name, t.id ] }, {include_blank: 'None'}) %>
+		Select team<%= select("team_name", "team_id", Team.all.collect {|t| [ t.team_name, t.id ] }, {include_blank: 'None'}) %>
 
 	</div>
 

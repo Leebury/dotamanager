@@ -14,6 +14,7 @@ class PlayersController < ApplicationController
 
 	def update
 		@player = Player.find(params[:id])
+		@player.team_id = params[:team_name][:team_id]
 		@player.update(player_params)
 		redirect_to @player
 	end
@@ -23,8 +24,8 @@ class PlayersController < ApplicationController
 	end
 
 	def create
-		@player = Player.new(player_params)
-		@player = params[:team_name][:team_id]
+		@player = Player.create(player_params)
+		@player.team_id = params[:team_name][:team_id]
 		@player.save
 		redirect_to @player
 	end

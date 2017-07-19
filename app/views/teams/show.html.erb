@@ -1,9 +1,12 @@
 <h1> show </h1>
 
-<div class="teamshow">
+<div class="teamShow">
 	<h2> <%= @team.team_name %></h2>
+
 	<ul>
-		<li><%= @team.player_names %></li>
+		<% @team.players.each do |player| %>
+			<li><%= player.player_name %></li>
+		<% end %>
 	</ul>
 
 	<p>Wins:<%= @team.wins %></p>

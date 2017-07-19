@@ -28,6 +28,10 @@
 	</div>
 
 	<div class="playerField">
+		Select team<%= select("team_name", "team_id", Team.all.collect {|t| [ t.team_name, t.id ] }, {include_blank: 'None'}) %>
+	</div>
+
+	<div class="playerField">
 		<%= form.submit %>
 	</div>
 
