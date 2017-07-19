@@ -5,7 +5,7 @@
 <% @players.each do |player| %>
 
 	<div class="teamIndex">
-		<h2><%= player.player_name %></h2>
+		<h2><%= link_to player.player_name, player %></h2>
 		<h3><%= player.preferred_role %></h3>
 	<% if player.teams.length > 0 %>
 		<a>Member of <%= player.teams.first.team_name %></a>
