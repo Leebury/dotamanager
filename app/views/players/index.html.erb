@@ -1,1 +1,16 @@
 <h1> Player index </h1>
+
+    <p><%=link_to "New player", new_player_path %></p>
+
+<% @players.each do |player| %>
+
+	<div class="teamIndex">
+		<h2><%= player.player_name %></h2>
+		<h3><%= player.preferred_role %></h3>
+
+		<a>Average GPM:<%= player.average_gpm %></a>
+		<a>Average EXP/M:<%= player.average_exp %></a>
+
+	</div>
+
+<% end %>

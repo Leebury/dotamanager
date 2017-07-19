@@ -14,7 +14,7 @@ class TeamsController < ApplicationController
 
 	def update
 		@team = Team.find(params[:id])
-		@team.save
+		@team.update(team_params)
 		redirect_to @team
 	end
 
@@ -23,7 +23,6 @@ class TeamsController < ApplicationController
 	end
 
 	def create
-		puts params
 		@team = Team.new(team_params)
 		@team.user_id = current_user.id
 		@team.save
@@ -32,7 +31,7 @@ class TeamsController < ApplicationController
 
 	def destroy
 		@team = Team.find(params[:id])
-		team.destroy
+		@team.destroy
 		redirect_to teams_path
 	end
 

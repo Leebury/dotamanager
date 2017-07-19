@@ -1,1 +1,34 @@
 <h1> Edit player </h1>
+
+
+<%= form_with(model: @player) do |form| %>
+	<div class="playerField">
+		<%= form.label :player_name %>
+		<%= form.text_field :player_name, id: :player_name %>
+	</div>
+
+	<div class="playerField">
+		<%= form.label :preferred_role %>
+		<%= form.text_field :preferred_role, id: :preferred_role %>
+	</div>
+
+	<div class="playerField">
+		<%= form.label :top_heroes %>
+		<%= form.text_field :most_played_heroes, id: :most_played_heroes %>
+	</div>
+
+	<div class="playerField">
+		<%= form.label :average_gpm %>
+		<%= form.number_field :average_gpm, id: :average_gpm %>
+	</div>
+
+	<div class="playerField">
+		<%= form.label :average_exp %>
+		<%= form.number_field :average_exp, id: :average_exp %>
+	</div>
+
+	<div class="playerField">
+		<%= form.submit %>
+	</div>
+
+<% end %>

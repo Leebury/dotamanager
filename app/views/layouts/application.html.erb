@@ -11,6 +11,12 @@
   <body>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+
+    <ul class="navbar">
+    	<p><%=link_to "Teams", teams_path %></p>
+    	<p><%=link_to "New team", new_team_path %></p>
+    	<p><%=link_to "Player index", players_path %></p>
     <%= yield %>
   </body>
 </html>

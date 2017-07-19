@@ -9,5 +9,13 @@
 	<p>Wins:<%= @team.wins %></p>
 	<p>Losses:<%= @team.losses %></p>
 
+	</div>
+
+
+	<div class="options">
+		<%=link_to 'Destroy', @team, method: :delete %>
+		<%=link_to 'Edit', edit_team_path(@team) %>
+
+
 
 	</div>
