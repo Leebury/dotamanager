@@ -4,7 +4,7 @@
 
 
 <div class="teamindex">
-	<h2> <%= team.team_name %></h2>
+	<h2><%=link_to team.team_name, team %></h2>
 	<ul>
 		<% team.players.each do |player| %>
 		<li><%= player.player_name %></li>
