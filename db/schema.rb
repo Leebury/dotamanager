@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170719143500) do
     t.string "player_names"
     t.integer "wins"
     t.integer "losses"
+    t.string "logo"
     t.index ["user_id"], name: "index_teams_on_user_id"
   end
 

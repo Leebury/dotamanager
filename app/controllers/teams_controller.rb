@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-
+ 	before_action :set_upload, only: [:show, :edit, :update, :destroy]
 	def index
 		@teams = Team.all
 	end
@@ -39,7 +39,7 @@ class TeamsController < ApplicationController
 	private
 	    # Never trust parameters from the scary internet, only allow the white list through.
 	    def team_params
-			params.require(:team).permit(:team_name, :player_names, :wins, :losses)
+			params.require(:team).permit(:team_name, :player_names, :wins, :losses, :logo)
 	    end
 
 

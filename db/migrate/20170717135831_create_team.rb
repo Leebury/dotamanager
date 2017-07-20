@@ -7,6 +7,9 @@ class CreateTeam < ActiveRecord::Migration[5.1]
 
       t.integer :wins
       t.integer :losses
-    end
+      t.string :logo
+
+
+  	end
   end
 end
