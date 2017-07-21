@@ -6,28 +6,28 @@
 
 <h1> Teams </h1>
 
-<ul>  <% @teams.each do |team|%>
-
-<div id="main-container" class="container-fluid">
 	<div class="row">
-		<div id="content" class="teamindex">
-			<h2><%=link_to team.team_name, team %></h2>
-			<img src="<%= team.logo.medium %>" /><br/>
-			<ul>
-				<% team.players.each do |player| %>
-				<li><%= player.player_name %></li>
-				<% end %>
-			</ul>
+		<% @teams.each do |team|%>
+			<div id="content" class="col-md-3">
+				<div class="index-style">
+					<h2><%=link_to team.team_name, team %></h2>
+					<img src="<%= team.logo.medium %>" /><br/>
+					<ul>
+						<% team.players.each do |player| %>
 
-			<p>Wins:<%= team.wins %></p>
-			<p>Losses:<%= team.losses %></p>
+						<li><%= player.player_name %></li>
+						<% end %>
+					
 
-	
+					<p>Wins:<%= team.wins %></p>
+					<p>Losses:<%= team.losses %></p>
+				</div>
 			</div>
-		</div>
+		<% end %>
 	</div>
 
-<% end %>
+
+
 
 <body>
 
