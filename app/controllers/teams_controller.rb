@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
  	before_action :set_upload, only: [:show, :edit, :update, :destroy]
+	
 	def index
 		@teams = Team.all
 	end
@@ -42,6 +43,10 @@ class TeamsController < ApplicationController
 			params.require(:team).permit(:team_name, :player_names, :wins, :losses, :logo)
 	    end
 
-
+	    def set_upload
+	      @upload = Team.find(params[:id])
+	    end
+	 
+	
 
 end

@@ -2,6 +2,11 @@
 
 <div class="teamShow">
 	<h2> <%= @team.team_name %></h2>
+	<!-- <img src="<%= @team.logo.url %>" /><br/> -->
+	<!-- <img src="<%= @team.logo.large %>" /><br/> -->
+	<img src="<%= @team.logo.medium %>" /><br/>
+	<!-- <img src="<%= @team.logo.thumb %>" /><br/> -->
+	<!-- <img src="<%= @team.logo.square %>" /><br/> -->
 
 	<ul>
 		<% @team.players.each do |player| %>

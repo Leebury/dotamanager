@@ -1,21 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Team listings</title>
+</head>
+
 <h1> Teams </h1>
 
 <ul>  <% @teams.each do |team|%>
 
+<div id="main-container" class="container-fluid">
+	<div class="row">
+		<div id="content" class="teamindex">
+			<h2><%=link_to team.team_name, team %></h2>
+			<img src="<%= team.logo.medium %>" /><br/>
+			<ul>
+				<% team.players.each do |player| %>
+				<li><%= player.player_name %></li>
+				<% end %>
+			</ul>
 
-<div class="teamindex">
-	<h2><%=link_to team.team_name, team %></h2>
-	<ul>
-		<% team.players.each do |player| %>
-		<li><%= player.player_name %></li>
-		<% end %>
-	</ul>
+			<p>Wins:<%= team.wins %></p>
+			<p>Losses:<%= team.losses %></p>
 
-	<p>Wins:<%= team.wins %></p>
-	<p>Losses:<%= team.losses %></p>
-
-
+	
+			</div>
+		</div>
 	</div>
 
 <% end %>
+
+<body>
+
+</body>
+</html>
+
 
