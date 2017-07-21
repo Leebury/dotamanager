@@ -15,6 +15,13 @@
   </head>
 
   <body>
+  		<ul class="navbar">
+		    <p><%=link_to "Teams", teams_path %></p>
+		    <p><%=link_to "New team", new_team_path %></p>
+		    <p><%=link_to "Player index", players_path %></p>
+		    <%= render 'devise/menu/registration_items' %>
+		  	<%= render 'devise/menu/login_items' %>
+		</ul>
   <div id="main-container" class="container">
   	<div class="row">
   		<div class="col-md-12">
@@ -22,13 +29,7 @@
 	    <p class="alert"><%= alert %></p>
 
 
-		    <ul class="navbar">
-		    	<p><%=link_to "Teams", teams_path %></p>
-		    	<p><%=link_to "New team", new_team_path %></p>
-		    	<p><%=link_to "Player index", players_path %></p>
-		    	<%= render 'devise/menu/registration_items' %>
-		  		<%= render 'devise/menu/login_items' %>
-			</ul>
+	
     			<%= yield %>
     		</div>
     	</div>
