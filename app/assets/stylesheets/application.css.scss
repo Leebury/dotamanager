@@ -21,20 +21,63 @@
 
 body {
 	background-color: black;
+	margin: 0;
+
 }
 
-.container{
+
+#main-container{
+	margin: 0;
+}
+
+/*.container{
 
 	background-image: url("/assets/Dota2_background.jpg");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 
+}*/
+
+
+#left-panel{
+
+	height: 800px;
+    margin: 0;
+    width: 100%;
+
+}
+
+#right-panel{
+
+	height: 800px;
+    margin: 0;
+    width: 100%;
+
+}
+
+#container{
+	width: 100%
 }
 
 
+.side-panel{
+	padding: 0;
+}
+/*#right-panel{
+
+	background-image: url("dragon-knight-panel.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 800px;
+    margin: 0;
+    width: 30%;
+
+}*/
 
 #content {
 	border-style: solid;
 	border-color: white;
+
+
 }
 

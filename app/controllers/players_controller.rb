@@ -13,18 +13,22 @@ class PlayersController < ApplicationController
 	end
 
 	def update
-		# @player = Player.find(params[:id])
-		# @player.team_id = params[:team_name][:team_id]
-		# @player.update(player_params)
-		# redirect_to @player
 
-		if params[:team_name][:team_id] != nil 
-			@player = Team.find(params[:team_name][:team_id]).players.create!(player_params)
-		else
-			@player = Player.create!(player_params)
+
+		# @team = Team.find(params[:team_name]['team_id'])
+		# @player = @team.find(params[:id])
+		# byebug
+		@player = Player.find(params[:id])
+		@player.update_attributes(player_params)
+		
+		@player.teams.delete_all
+
+		if params[:team_name]['team_id'] != nil || params[:team_name]['team_id'] != ''	
+			PlayerTeam.create!(player_id: @player.id, team_id: params[:team_name]['team_id'])
 		end
 
-		redirect_to @player
+
+		redirect_to '/players'
 	end
 
 	def new
@@ -39,7 +43,7 @@ class PlayersController < ApplicationController
 			@player = Player.create!(player_params)
 		end
 
-		redirect_to @player
+		redirect_to '/players'
 
 	end
 

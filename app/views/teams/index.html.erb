@@ -4,26 +4,49 @@
 	<title>Team listings</title>
 </head>
 
-<h1> Teams </h1>
 
+<h1> My teams </h1>
 	<div class="row">
-		<% @teams.each do |team|%>
-			<div id="content" class="col-md-3">
-				<div class="index-style">
-					<h2><%=link_to team.team_name, team %></h2>
-					<img src="<%= team.logo.medium %>" /><br/>
-					<ul>
-						<% team.players.each do |player| %>
+		
+			<div class="col-md-2 side-panel">
 
-						<li><%= player.player_name %></li>
-						<% end %>
-					
+			<img class="image-responsive" id="left-panel" src="/assets/lina-side.jpg">
 
-					<p>Wins:<%= team.wins %></p>
-					<p>Losses:<%= team.losses %></p>
-				</div>
 			</div>
-		<% end %>
+			<div  id="content" class="col-md-8">
+
+				<div class="row">
+					<% @teams.each do |team|%>
+						<div class="col-md-4">
+							<div class="index-style">
+
+								<h2><%=link_to team.team_name, team %></h2>
+								<img src="<%= team.logo.medium %>" /><br/>
+								<ul>
+									<% team.players.each do |player| %>
+
+									<li><%= player.player_name %></li>
+								</ul>
+									<% end %>
+								
+
+								<p>Wins:<%= team.wins %></p>
+								<p>Losses:<%= team.losses %></p>
+
+							</div>
+						</div>
+					<% end %>
+				</div>
+				
+			</div>
+			<div class="col-md-2 side-panel">
+
+			<img class="image-responsive" id="right-panel" src="/assets/dragon-knight-panel.jpg">
+
+				
+			</div>
+
+		
 	</div>
 
 
