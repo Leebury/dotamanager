@@ -15,19 +15,36 @@
   </head>
 
   <body>
-  		<ul class="navbar">
-		    <p><%=link_to "Teams", teams_path %></p>
-		    <p><%=link_to "New team", new_team_path %></p>
-		    <p><%=link_to "Player index", players_path %></p>
-		    <%= render 'devise/menu/registration_items' %>
-		  	<%= render 'devise/menu/login_items' %>
-		</ul>
+  
   <div id="main-container" class="container">
   	<div class="row">
   		<div class="col-md-12">
 	  	<p class="notice"><%= notice %></p>
 	    <p class="alert"><%= alert %></p>
 
+
+        <nav id="header" class="navbar navbar-fixed-top">
+            <div id="header-container" class="container navbar-container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="brand" class="navbar-brand" href="#">Dota Team Manager</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><%=link_to "Teams", teams_path %></li>
+                        <li><%=link_to "New team", new_team_path %></li>
+                        <li><%=link_to "Player index", players_path %></li>
+                        <li><%= render 'devise/menu/registration_items' %></li>
+		  				<li><%= render 'devise/menu/login_items' %></li>
+                    </ul>
+                </div><!-- /.nav-collapse -->
+            </div><!-- /.container -->
+        </nav><!-- /.navbar -->
 
 	
     			<%= yield %>
