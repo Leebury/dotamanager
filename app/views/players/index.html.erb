@@ -4,15 +4,20 @@
 
 <% @players.each do |player| %>
 
-	<div class="teamIndex">
+	<div class="row">
+		<div class="col-md-12 player-index">
 		<h2><%= link_to player.player_name, player %></h2>
 		<h3><%= player.preferred_role %></h3>
 	<% if player.teams.length > 0 %>
-		<a>Member of <%= player.teams.first.team_name %></a>
+	<div>
+		<a>Member of <%= link_to player.teams.first.team_name %></a>
+</div>
 	<% end %>	
-
-		<a>Average GPM:<%= player.average_gpm %></a>
-		<a>Average EXP/M:<%= player.average_exp %></a>
+		<ul>
+			<li>Average GPM:<%= player.average_gpm %></li>
+			<li>Average EXP/M:<%= player.average_exp %></li>
+		</ul>
+	</div>
 
 	</div>
 

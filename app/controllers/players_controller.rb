@@ -14,10 +14,6 @@ class PlayersController < ApplicationController
 
 	def update
 
-
-		# @team = Team.find(params[:team_name]['team_id'])
-		# @player = @team.find(params[:id])
-		# byebug
 		@player = Player.find(params[:id])
 		@player.update_attributes(player_params)
 		
@@ -55,7 +51,6 @@ class PlayersController < ApplicationController
 
 
 	private
-	    # Never trust parameters from the scary internet, only allow the white list through.
 	    def player_params
 			params.require(:player).permit(:player_name, :preferred_role, :most_played_heroes, :average_gpm, :average_exp)
 	    end
